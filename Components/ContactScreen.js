@@ -1,0 +1,161 @@
+import React from 'react';
+import {
+  View,
+  Text,
+  Image,
+  TouchableWithoutFeedback,
+  FlatList,
+  StyleSheet,
+  TouchableOpacity
+} from "react-native"
+import { PermissionsAndroid } from 'react-native';
+import Contacts from 'react-native-contacts';
+import ChatBoxData from "../Assets/Data"
+import MaterialIcons from "react-native-vector-icons/MaterialIcons"
+import { useNavigation } from '@react-navigation/native';
+
+
+const ContactScreen = () => {
+    const navigation = useNavigation();
+    const handle = () =>{    
+      PermissionsAndroid.request(
+          PermissionsAndroid.PERMISSIONS.READ_CONTACTS,
+          {
+            'title': 'Contacts',
+            'message': 'This app would like to view your contacts.',
+            'buttonPositive': 'Please accept bare mortal'
+          }
+        )
+          .then(Contacts.openContactForm({})
+            .then((contacts) => {
+                // work with contacts
+                  console.log(contacts)
+                })
+                  .catch((e) => {
+                      console.log(e)
+                  }))
+              }
+  return (
+<View>
+
+<TouchableOpacity onPress={() =>navigation.navigate('NewContact')}>
+<View style={styles.container}>
+<View style={{height:55,width:55,backgroundColor:"#2e5f55",borderRadius:40}} >
+<MaterialIcons name='group' color="white" style={{margin:5}} size={40} />
+</View>
+  <View style={styles.fill}>
+    <View style={styles.row}>
+      <Text style={styles.name}>
+      New group
+      </Text>
+ </View>
+ </View>
+ </View>
+ </TouchableOpacity>
+ <TouchableOpacity onPress={handle}>
+ <View style={styles.container}>
+
+<View style={{height:55,width:55,backgroundColor:"#2e5f55",borderRadius:40}} >
+<MaterialIcons name='group-add' color="white" style={{margin:5}} size={40} />
+</View>
+  <View style={styles.fill}>
+    <View style={styles.row}>
+      <Text style={styles.name}>
+      New Contact
+      </Text>
+ </View>
+ </View>
+
+ </View>
+
+ </TouchableOpacity>
+<FlatList
+    data={ChatBoxData}
+    renderItem={({ item }) =>  <Users ChatBox={item} />}
+    showsVerticalScrollIndicator={false}
+   
+     />
+</View>
+   
+  
+  )
+}
+
+export default ContactScreen
+
+
+
+
+const Users = ({ChatBox}) => {
+    const user=ChatBox.users[1]
+  return (
+    <View style={styles.container}>
+  
+   <Image style={styles.image} source={{uri:user.imageUri}}  />
+   <View style={styles.fill}>
+     <View style={styles.row}>
+       <Text style={styles.name}>
+         {user.name}
+       </Text>
+  </View>
+  
+  
+   </View>
+      
+     
+    </View>
+
+  ) 
+}
+
+
+const styles = StyleSheet.create({
+    container:{
+        padding:15,
+        marginTop:10,
+        flexDirection: 'row',
+    },
+    image:{
+        height:50,
+        width:50,
+        borderRadius:50,
+        marginRight:10,
+        marginLeft:9,
+    },
+    fill:{
+        flex: 1,
+        justifyContent:"center",
+    },
+    row:{
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+    },
+    name:{
+        fontWeight:'bold',
+        fontSize:18,
+        marginBottom:3,
+        marginLeft:10
+    },
+    text:{
+   color:"#228B62",
+   fontWeight:"600",
+    },
+    badgeText:{
+        color:"white",
+        fontSize:12,
+        fontWeight:"bold",
+        
+      },
+      notify:{
+        backgroundColor:"#228B62",
+        borderRadius:20,
+        height:20,
+        width:20,
+        marginRight:15,
+        justifyContent:"center",
+        alignItems:"center",
+
+
+      },
+
+})
