@@ -1,8 +1,8 @@
 import {View, Text} from 'react-native';
 import React, {useState, useCallback, useEffect} from 'react';
 import {GiftedChat, Bubble, Send} from 'react-native-gifted-chat';
- import Icon from 'react-native-vector-icons/Feather'
- import FIcon from 'react-native-vector-icons/FontAwesome'
+import Icon from 'react-native-vector-icons/Feather';
+import FIcon from 'react-native-vector-icons/FontAwesome';
 export default function GiftedChats() {
   // console.log("hiiii");
   const [messages, setMessages] = useState([]);

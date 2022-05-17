@@ -3,7 +3,7 @@ export default {
 	users: [{
 		id: 'u1',
 		name: 'Vadim',
-		imageUri: 'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/vadim.jpg',
+		imageUri: 'https://wallpaperaccess.com/full/731058.jpg',
 	}, {
 		id: 'u2',
 		name: 'Elon Musk',

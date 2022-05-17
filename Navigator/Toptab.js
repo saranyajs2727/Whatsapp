@@ -11,62 +11,83 @@ import Calls from '../Components/Calls';
 const Tab = createMaterialTopTabNavigator();
 export default function Toptab() {
   return (
-      <Tab.Navigator
-      initialRouteName='Chats'
-        screenOptions={({route}) => ({
-          tabBarActiveTintColor: 'white',
+    <Tab.Navigator
+      initialRouteName="Chats"
+      // tabBarOptions={{
+      //               style: {
+      //                 backgroundColor: "white",
+      //                 paddingTop: 20,
+      //                 paddingHorizontal: 25
+      //                 },
+      //               indicatorStyle: {
+      //                 borderBottomColor: "#00Fc50",
+      //                 borderBottomWidth: 2,
+      //                 // width: '30%',
+      //                 // left:"9%"
+      //               },
+      //               tabStyle : {
+      //                 justifyContent: "center",
+      //                 width: 100,
+      //               }
+      //             }}
+      screenOptions={({route}) => ({
+        tabBarActiveTintColor: 'white',
 
+        tabBarLabelStyle: {
+          fontSize: 16,
+          fontWeight: '800',
+          alignItems: 'center',
+          marginTop: 20,
+        },
+        tabBarStyle: {backgroundColor: '#2e5f55', height: 70},
+      })}>
+      <Tab.Screen
+        name="Camera"
+        component={Camera}
+        options={{
+          title: 'message',
+          tabBarIcon: () => <Ionicons name="camera" color="white" size={26} />,
+          tabBarIconStyle: {marginTop: 20, marginLeft: -40},
+          tabBarShowLabel: false,
+          // tabBarStyle:false,
+        }}
+      />
+      <Tab.Screen
+        name="Chats"
+        component={MessageScreen}
+        options={{
           tabBarLabelStyle: {
-            fontSize: 16,
-            fontWeight: '800',
-            alignItems: 'center',
+            fontSize: 17,
+            fontWeight: 'bold',
             marginTop: 20,
+            marginLeft: -50,
           },
-          tabBarStyle: {backgroundColor: '#2e5f55', height: 70},
-        })}>
-          <Tab.Screen
-          name="Camera"
-          component={Camera}
-          options={{
-           title:"message",
-            tabBarIcon: ({color}) => (
-              <Ionicons name="camera" color={color} size={26}  />
-            ),
-            tabBarIconStyle:{marginTop:20,marginLeft:-40},
-            tabBarShowLabel:false,  
-          }}
-        />
-         <Tab.Screen name="Chats" component={MessageScreen} 
-         options={{
+        }}
+      />
+      <Tab.Screen
+        name="Status"
+        component={Status}
+        options={{
           tabBarLabelStyle: {
-           fontSize:17,
-           fontWeight:"bold",
-           marginTop:20,
-           marginLeft:-90
-},
-         }}
-
-         />
-        <Tab.Screen name="Status" component={Status} 
-              options={{
+            fontSize: 17,
+            fontWeight: 'bold',
+            marginTop: 20,
+            marginLeft: -10,
+          },
+        }}
+      />
+      <Tab.Screen
+        name="Calls"
+        component={Calls}
+        options={{
           tabBarLabelStyle: {
-           fontSize:17,
-           fontWeight:"bold",
-           marginTop:20,
-           marginLeft:-40
-},
-         }}
-        />
-        <Tab.Screen name="Calls" component={Calls} 
-              options={{
-          tabBarLabelStyle: {
-           fontSize:17,
-           fontWeight:"bold",
-           marginTop:20,
-           marginLeft:-20},
-         }}
-        />
-      </Tab.Navigator>
-
+            fontSize: 17,
+            fontWeight: 'bold',
+            marginTop: 20,
+            marginLeft: -10,
+          },
+        }}
+      />
+    </Tab.Navigator>
   );
 }

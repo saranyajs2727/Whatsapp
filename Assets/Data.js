@@ -3,11 +3,11 @@ export default [{
     users: [{
       id: 'u1',
       name: 'Vadim',
-      imageUri: 'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/vadim.jpg',
+      imageUri: 'https://wallpaperaccess.com/full/731058.jpg',
     }, {
       id: 'u2',
-      name: 'Darlene RobertSon',
-      imageUri: 'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/elon.png',
+      name: 'Sandy',
+      imageUri: 'https://wallpaperaccess.com/full/731058.jpg',
     }],
     lastMessage: {
       id: 'm1',
@@ -23,8 +23,8 @@ export default [{
       imageUri: 'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/vadim.jpg',
     }, {
       id: 'u3',
-      name: 'Paul Howard',
-      imageUri: 'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/jeff.jpeg',
+      name: 'Varsni',
+      imageUri: 'https://wallup.net/wp-content/uploads/2018/10/07/866287-colorful-parrot-bird-cute-animal-nature-beauty-748x421.jpg',
     }],
     lastMessage: {
       id: 'm2',
@@ -39,8 +39,8 @@ export default [{
       imageUri: 'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/vadim.jpg',
     }, {
       id: 'u4',
-      name: 'Krisit Wardson',
-      imageUri: 'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/zuck.jpeg',
+      name: 'Suresh Krishna',
+      imageUri: 'https://wallpaper.dog/large/17219188.jpg',
     }],
     lastMessage: {
       id: 'm3',
@@ -56,8 +56,8 @@ export default [{
       imageUri: 'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/vadim.jpg',
     }, {
       id: 'u5',
-      name: 'Jenny Vilson',
-      imageUri: 'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/graham.jpg',
+      name: 'sasmitha',
+      imageUri: 'https://lh3.googleusercontent.com/KgouINDDuiuaX1y6EdYf352MFrlsJ6pYtVzkNldcYbNVw3oyeehhRJ9j3Q_vRoo6x6CM1loWj0Ii5Y0DkNhtPrI=s900',
     }],
     lastMessage: {
       id: 'm4',
@@ -73,8 +73,8 @@ export default [{
       imageUri: 'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/vadim.jpg',
     }, {
       id: 'u6',
-      name: 'Samual webb',
-      imageUri: 'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/biahaze.jpg',
+      name: 'Vesalee',
+      imageUri: 'https://www.pixelstalk.net/wp-content/uploads/2016/09/Desktop-Nature-Free-HD-Backgrounds.jpg',
     }],
     lastMessage: {
       id: 'm5',
@@ -89,8 +89,8 @@ export default [{
       imageUri: 'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/vadim.jpg',
     }, {
       id: 'u7',
-      name: 'samwell',
-      imageUri: 'https://previews.123rf.com/images/deagreez/deagreez1907/deagreez190705835/127655228-close-up-side-profile-photo-handsome-guy-brainstorming-briefing-coder-typing-php-css-keyboard-develo.jpg',
+      name: 'smart',
+      imageUri: 'https://i0.wp.com/finetechraju.com/wp-content/uploads/2022/05/nature-hd-wallpapers-for-laptop-free-download-finetechraju.com_.jpg',
     }],
     lastMessage: {
       id: 'm6',

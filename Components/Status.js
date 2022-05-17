@@ -153,7 +153,7 @@
 // //      <View style={{height:60,width:"100%",flex:1}}>
 // //      <Stories data={data} />
 // //      </View>
-     
+
 // //     </View>
 // //   );
 // // }
@@ -171,7 +171,7 @@
 //       images={images}
 //       containerStyle={{padding:20}}
 //       // color="red"
-    
+
 //     />
 //     </View>
 //   )
@@ -179,72 +179,92 @@
 
 // export default Status
 
-
-
 import React from 'react';
 import {View, Text, ScrollView, TouchableOpacity, Image} from 'react-native';
 import Entypo from 'react-native-vector-icons/Entypo';
 import {useNavigation} from '@react-navigation/native';
+import FloatingButton from './FloatingButton';
+import StatusButton from './StatusButton';
+import { Button } from 'react-native-vector-icons/MaterialCommunityIcons';
 
-const Stories = () => {
+const Status = () => {
   const navigation = useNavigation();
+//  const {name} = route.params;
+//   const {backgroundColor} = route.params;
+  
+//   const handle = () =>{
+//     console.log(name)
+    
+//   }
+
 
   const storyInfo = [
     {
       id: 1,
       name: 'Your Story',
+      time:'Today, 12.49 PM',
       image: require('../Assets/Images/img11.jpeg'),
     },
     {
       id: 0,
-      name: 'Ram_Charan',
+      name: 'Ragavi',
+      time:'Today, 10.59 PM',
       image: require('../Assets/Images/img1.jpg'),
     },
     {
       id: 0,
       name: 'sandy',
+      time:'Today, 1.47 PM',
       image: require('../Assets/Images/img2.jpg'),
     },
     {
       id: 0,
-      name: 'The_Groot',
+      name: 'Smart',
+      time:'Today, 2.49 PM',
       image: require('../Assets/Images/img3.jpg'),
     },
     ,
     {
       id: 0,
-      name: 'loverland',
+      name: 'Nithin',
+      time:'Today, 5.49 PM',
       image: require('../Assets/Images/img5.jpeg'),
     },
     ,
     {
       id: 0,
-      name: 'chillhouse',
+      name: 'Asan',
+      time:'Today, 8.00 .AM',
       image: require('../Assets/Images/img6.jpeg'),
     },
     {
       id: 0,
-      name: '__yazhini___',
+      name: 'yazhini',
+      time:'Today, 10.49 PM',
       image: require('../Assets/Images/img7.jpg'),
     },
     {
       id: 0,
-      name: 'call_me_dude',
+      name: 'Suresh Krishna',
+      time:'Today, 12.9 PM',
       image: require('../Assets/Images/img8.jpeg'),
     },
     {
       id: 0,
-      name: 'its_me_brutus',
+      name: 'Varsni',
+      time:'Today, 1.49 AM',
       image: require('../Assets/Images/img9.jpeg'),
     },
     {
       id: 0,
-      name: 'rockers_ride',
+      name: 'Vesalee',
+      time:'Today, 12.9 PM',
       image: require('../Assets/Images/img10.jpeg'),
     },
     {
       id: 0,
-      name: 'blacky_black',
+      name: 'Sasmitha',
+      time:'Yesterday, 2.42 PM',
       image: require('../Assets/Images/img11.jpeg'),
     },
   ];
@@ -253,7 +273,8 @@ const Stories = () => {
     <ScrollView
       showsVerticalScrollIndicator={true}
       // showsHorizontalScrollIndicator={false}
-      style={{paddingVertical: 10,flex:1,flexDirection:"column"}}>
+      style={{paddingVertical: 1, flex: 1, flexDirection: 'column'}}>
+      <StatusButton />
       {storyInfo.map((data, index) => {
         return (
           <TouchableOpacity
@@ -262,6 +283,7 @@ const Stories = () => {
               navigation.push('StatusScreen', {
                 name: data.name,
                 image: data.image,
+                time:data.time,
               })
             }>
             <View
@@ -269,7 +291,7 @@ const Stories = () => {
                 flexDirection: 'row',
                 paddingHorizontal: 8,
                 position: 'relative',
-                padding:15,
+                padding: 10,
               }}>
               {data.id == 1 ? (
                 <View
@@ -288,6 +310,7 @@ const Stories = () => {
                       borderRadius: 100,
                     }}
                   />
+  
                 </View>
               ) : null}
               <View
@@ -312,23 +335,48 @@ const Stories = () => {
                   }}
                 />
               </View>
+              <View style={{flexDirection:"column"}}>
               <Text
                 style={{
-                  textAlign: 'center',
+                  // textAlign: 'center',
                   fontSize: 20,
-                  marginLeft:20,
-                  fontWeight:"bold",
-                  marginTop:16,
+                  marginLeft: 20,
+                  fontWeight: 'bold',
+                  marginTop: 5,
                   opacity: data.id == 0 ? 1 : 0.5,
                 }}>
                 {data.name}
               </Text>
+              <Text
+                style={{
+                  textAlign: 'center',
+                  fontSize: 16,
+                  marginLeft: 20,
+                  // fontWeight: 'bold',
+                  marginTop: 6,
+                  opacity: data.id == 0 ? 1 : 0.5,
+                }}>
+                {data.time}
+              </Text>
+              </View>
+
             </View>
+            {
+            data.id == 1 ? (
+               <View style={{margin:10}}>
+                 <Text style={{fontSize:18,fontWeight:"bold",marginLeft:10,}}>Recent updates</Text>
+               </View>
+            ):null
+          }
           </TouchableOpacity>
+
+          
+       
         );
       })}
+      {/* <Button title='jhjk' onPress={handle}/> */}
     </ScrollView>
   );
 };
 
-export default Stories;
+export default Status;

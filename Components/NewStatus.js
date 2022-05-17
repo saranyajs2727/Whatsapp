@@ -8,46 +8,40 @@ import {
   TextInput,
   Animated,
 } from 'react-native';
-import {
-  Menu,
-  MenuOptions,
-  MenuOption,
-  MenuTrigger,
-  MenuProvider
-
-} from 'react-native-popup-menu';
-import Ionic from 'react-native-vector-icons/Ionicons';
 import Icon from 'react-native-vector-icons/Entypo';
 import Icons from 'react-native-vector-icons/Ionicons';
 import Feather from 'react-native-vector-icons/Feather';
 
-const StatusScreen = ({route, navigation}) => {
-  const {name} = route.params;
-  const {image} = route.params;
-  const {time}  =route.params;
-
-  useEffect(() => {
-    let timer = setTimeout(() => {
-      navigation.goBack();
-    }, 10000);
-
-    Animated.timing(progress, {
-      toValue: 5,
-      duration: 10000,
-      useNativeDriver: false,
-    }).start();
-    return () => clearTimeout(timer);
-  }, []);
-
-  const [progress, setProgress] = useState(new Animated.Value(0));
-
-  const progressAnimation = progress.interpolate({
-    inputRange: [0, 5],
-    outputRange: ['0%', '100%'],
-  });
-
-  return (
-    <View
+const NewStatus = ({route,navigation}) => {
+    const {name} = route.params;
+    const {backgroundColor} = route.params;
+  
+  
+      
+      useEffect(() => {
+        let timer = setTimeout(() => {
+          navigation.goBack();
+        }, 10000);
+    
+        Animated.timing(progress, {
+          toValue: 5,
+          duration: 10000,
+          useNativeDriver: false,
+        }).start();
+        return () => clearTimeout(timer);
+      }, []);
+    
+      const [progress, setProgress] = useState(new Animated.Value(0));
+    
+      const progressAnimation = progress.interpolate({
+        inputRange: [0, 5],
+        outputRange: ['0%', '100%'],
+      });
+      
+    return (
+        <View> 
+        {/* <Text style={{}}>{name}</Text> */}
+        <View
       style={{
         backgroundColor: 'black',
         height: '100%',
@@ -86,7 +80,7 @@ const StatusScreen = ({route, navigation}) => {
           style={{
             flexDirection: 'row',
           }}>
-          <TouchableOpacity onPress={() => navigation.goBack()}>
+          <TouchableOpacity onPress={() => navigation.navigate('Status')}>
             <Icons
               name="arrow-back"
               style={{
@@ -98,8 +92,9 @@ const StatusScreen = ({route, navigation}) => {
               }}
             />
           </TouchableOpacity>
+     
           <Image
-            source={image}
+            source={require('../Assets/Images/img11.jpeg')}
             style={{
               borderRadius: 200,
               backgroundColor: 'orange',
@@ -130,7 +125,7 @@ const StatusScreen = ({route, navigation}) => {
               fontWeight: '500',
               paddingLeft: 10,
             }}>
-            {name}
+      My Status
           </Text>
           <Text
             style={{
@@ -140,23 +135,31 @@ const StatusScreen = ({route, navigation}) => {
               paddingLeft: 10,
               marginTop:5,
             }}>
-            {time}
+            Today 12.49PM
           </Text>
           </View>
                 
 
-          <TouchableOpacity onPress={sidemenu}>
+          {/* <TouchableOpacity onPress={sidemenu}>
             <Icon
               name="dots-three-vertical"
               style={{fontSize: 20,fontWeight:"bold", color: 'white', opacity: 0.6,marginLeft:-70,marginTop:10}}
             />
-          </TouchableOpacity>
+          </TouchableOpacity> */}
         </View>
       </View>
-      <Image
-        source={image}
-        style={{position: 'absolute', width: '100%', height: 400}}
-      />
+      <View  style={{position: 'absolute', width: '100%', height: 400 ,backgroundColor:backgroundColor}}>
+<Text style={{
+    fontSize:30,
+    fontWeight:"500",
+    textAlign:"center",
+    justifyContent:"center",
+    alignItems:"center",
+    marginTop:150,
+    color:"white"
+}}>{name}</Text>
+      </View>
+
       <View
         style={{
           position: 'absolute',
@@ -167,48 +170,16 @@ const StatusScreen = ({route, navigation}) => {
           justifyContent: 'space-around',
           marginVertical: 10,
           width: '100%',
-        }}>
-        {/* <TextInput
-          placeholder="send message"
-          placeholderTextColor="white"
-          style={{
-            borderColor: 'white',
-            borderRadius: 25,
-            width: '85%',
-            height: 50,
-            paddingLeft: 20,
-            borderWidth: 1,
-            fontSize: 20,
-            color: 'white',
-          }}
-        /> */}
+        }}> 
+    
         <TouchableOpacity onPress={() => navigation.goBack()}>
           <Feather name="chevron-up" style={{fontSize: 45, color: 'white'}} />
           <Text style={{color: 'white', marginBottom: 2}}>Reply</Text>
         </TouchableOpacity>
       </View>
     </View>
-  );
-};
-
-export default StatusScreen;
-
-
-const sidemenu = () => {
-  <MenuProvider>
-  <View>
-  <Text>Hello world!</Text>
-  <Menu>
-    <MenuTrigger text='Select action' />
-    <MenuOptions>
-      <MenuOption onSelect={() => alert(`Save`)} text='Save' />
-      <MenuOption onSelect={() => alert(`Delete`)} >
-        <Text style={{color: 'red'}}>Delete</Text>
-      </MenuOption>
-      <MenuOption onSelect={() => alert(`Not called`)} disabled={true} text='Disabled' />
-    </MenuOptions>
-  </Menu>
-</View>
-</MenuProvider>
-
+         </View>
+    )
 }
+
+export default NewStatus
