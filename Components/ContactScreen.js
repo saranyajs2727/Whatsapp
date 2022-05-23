@@ -10,6 +10,7 @@ import {
 } from "react-native"
 import { PermissionsAndroid } from 'react-native';
 import Contacts from 'react-native-contacts';
+import FontAwesome5 from "react-native-vector-icons/FontAwesome5"
 import ChatBoxData from "../Assets/Data"
 import MaterialIcons from "react-native-vector-icons/MaterialIcons"
 import { useNavigation } from '@react-navigation/native';
@@ -63,6 +64,16 @@ const ContactScreen = () => {
       <Text style={styles.name}>
       New Contact
       </Text>
+        <View style={{flexDirection: 'row', marginLeft: 10}}>
+                <TouchableOpacity onPress={() => navigation.navigate('QrCode')}>
+                  <FontAwesome5
+                    name="qrcode"
+                    size={25}
+                    color="grey"
+                    style={{marginRight: 20}}
+                  />
+                </TouchableOpacity>
+                </View>
  </View>
  </View>
 

@@ -18,7 +18,7 @@ const UserScreen = () => {
   const {logout} = useContext(AuthContext)
   return (
     <SafeAreaView>
-    <Button title='logout' onPress={logout}/>
+    {/* <Button title='logout' onPress={logout}/> */}
       <FloatingButton />
       <FlatList
         data={ChatBoxData}

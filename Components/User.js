@@ -34,6 +34,8 @@ const User = ({ChatBox}) => {
     const [name, SetName] = useState('');
     const [submitted, SetSubmitted] = useState(false);
     const [showWarning, SetshowWarning] = useState(false);
+  
+
     const onPressHandler = () => {
       if (name.length > 3) {
         SetSubmitted(!submitted);
@@ -114,11 +116,15 @@ const User = ({ChatBox}) => {
               </View>
               </View>
       </Modal>
+
+
+      
        <View style={{flexDirection:"row",width:"100%"}}>
        <Pressable
         onPress={onPressHandler}
       >
         <Image style={styles.image} source={{uri: user.imageUri}} />
+        
       </Pressable>
 
 

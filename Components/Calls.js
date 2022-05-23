@@ -2,11 +2,15 @@ import { View, Text,SafeAreaView,FlatList,StyleSheet } from 'react-native'
 import React from 'react'
 import ChatBoxData from "../Assets/Data"
 import CallScreen from './CallScreen'
+import CallFloating from './CallFloating'
 export default function Calls() {
   return (
     <SafeAreaView >
 
-    
+    {/* floating button for call  */}
+    <CallFloating />
+
+    {/* call Screen data */}
 <FlatList
     data={ChatBoxData}
     renderItem={({ item }) =>  <CallScreen ChatBox={item} />}
@@ -14,13 +18,7 @@ export default function Calls() {
    
      />
      
-     <View style={styles.root}>
-    <View style={styles.buttonContainer}>
-   <Text style={styles.buttonText}>+</Text>
-   
-  </View>
-  </View>
-
+    
 
     
     </SafeAreaView>

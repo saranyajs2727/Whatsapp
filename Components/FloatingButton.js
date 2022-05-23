@@ -8,8 +8,8 @@ const FloatingButton = () => {
 
   return (
     <View style={styles.container}>
-    <TouchableOpacity onPress={() => navigation.navigate('VideoCall')}>
-      {/* <TouchableOpacity onPress={() => navigation.navigate('Contacts')}> */}
+    {/* <TouchableOpacity onPress={() => navigation.navigate('VideoCall')}> */}
+      <TouchableOpacity onPress={() => navigation.navigate('Contacts')}>
         <Icon name="message-reply-text" size={25} color="white" />
       </TouchableOpacity>
     </View>

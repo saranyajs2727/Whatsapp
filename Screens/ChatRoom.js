@@ -7,11 +7,11 @@ import MessageInput from '../Components/MessageInput';
 const ChatRoom = () => {
   return (
     <View style={styles.page}>
-      <FlatList
+      {/* <FlatList
         data={ChatData.messages}
         renderItem={({item}) => <ChatScreen message={item} />}
-      />
-      <MessageInput />
+      /> */}
+      {/* <MessageInput /> */}
     </View>
   );
 };
